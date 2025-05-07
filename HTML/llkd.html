@@ -1,0 +1,226 @@
+<!-- <!DOCTYPE html>
+<html lang="uz">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portfolio Dizayn</title>
+  <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      display: flex;
+      font-family: Arial, sans-serif;
+      background-color: #1e1e1e;
+      color: #fff;
+    }
+
+    /* Sidebar */
+    .sidebar {
+      width: 250px;
+      height: 100vh;
+      background-color: #0b132b;
+      padding: 30px 20px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      position: fixed;
+      left: 0;
+      top: 0;
+    }
+
+    .sidebar img {
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      object-fit: cover;
+      margin-bottom: 10px;
+      border: 2px solid #fff;
+    }
+
+    .sidebar h2 {
+      font-size: 20px;
+      margin-bottom: 20px;
+    }
+
+    .socials {
+      display: flex;
+      gap: 10px;
+      margin-bottom: 30px;
+    }
+
+    .socials a {
+      color: white;
+      background-color: #1c2541;
+      padding: 10px;
+      border-radius: 50%;
+      transition: background 0.3s;
+    }
+
+    .socials a:hover {
+      background-color: #3a506b;
+    }
+
+    .nav-links {
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+      gap: 20px;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: #fff;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 10px 15px;
+      border-radius: 5px;
+      transition: background 0.3s;
+    }
+
+    .nav-links a:hover,
+    .nav-links a.active {
+      background-color: #1c2541;
+    }
+
+    /* Main content */
+    .main {
+      margin-left: 250px;
+      padding: 50px;
+      background-image: url('https://images.unsplash.com/photo-1506765515384-028b60a970df?auto=format&fit=crop&w=1400&q=80');
+      background-size: cover;
+      background-position: center;
+      height: 100vh;
+      color: white;
+    }
+
+    .main h1 {
+      font-size: 48px;
+    }
+
+    .main p {
+      font-size: 24px;
+      margin-top: 10px;
+      border-bottom: 2px solid #fff;
+      display: inline-block;
+    }
+
+  </style>
+</head>
+<body>
+
+  <div class="sidebar">
+    <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Profil rasmi">
+    <h2>Alex Smith</h2>
+    <div class="socials">
+      <a href="#"><i class='bx bxl-twitter'></i></a>
+      <a href="#"><i class='bx bxl-facebook'></i></a>
+      <a href="#"><i class='bx bxl-instagram'></i></a>
+      <a href="#"><i class='bx bxl-skype'></i></a>
+      <a href="#"><i class='bx bxl-linkedin'></i></a>
+    </div>
+
+    <div class="nav-links">
+      <a href="#" class="active"><i class='bx bx-home'></i> Home</a>
+      <a href="#"><i class='bx bx-user'></i> About</a>
+      <a href="#"><i class='bx bx-file'></i> Resume</a>
+      <a href="#"><i class='bx bx-briefcase'></i> Portfolio</a>
+      <a href="#"><i class='bx bx-server'></i> Services</a>
+      <a href="#"><i class='bx bx-chevron-down'></i> Dropdown</a>
+      <a href="#"><i class='bx bx-envelope'></i> Contact</a>
+    </div>
+  </div>
+
+  <div class="main">
+    <h1>Alex Smith</h1>
+    <p>I'm Developer</p>
+  </div>
+
+</body>
+</html> -->
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+  <meta charset="UTF-8">
+  <title>Text Rotation</title>
+  <style>
+    body {
+      background: #111;
+      color: #fff;
+      font-family: sans-serif;
+     display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh; 
+    }
+
+    .typing-container {
+      font-size: 32px;
+    }
+
+    .static-text {
+      display: inline;
+      margin-right: 8px;
+      color: #0ff;
+    }
+
+    .dynamic-text::after {
+      content: '|';
+      animation: blink 0.7s infinite;
+    }
+
+    @keyframes blink {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="typing-container">
+    <span class="static-text">Men</span>
+    <span class="dynamic-text" id="changing-text"></span>
+  </div>
+
+  <script>
+    const words = ["Dasturchiman", "Dizaynerman", "Mobilografman"];
+    let i = 0;
+    let j = 0;
+    let currentWord = '';
+    let isDeleting = false;
+    const speed = 100;
+    const pause = 1500;
+    const textEl = document.getElementById("changing-text");
+
+    function type() {
+      currentWord = words[i];
+      if (isDeleting) {
+        j--;
+        textEl.textContent = currentWord.substring(0, j);
+      } else {
+        j++;
+        textEl.textContent = currentWord.substring(0, j);
+      }
+
+      if (!isDeleting && j === currentWord.length) {
+        isDeleting = true;
+        setTimeout(type, pause);
+      } else if (isDeleting && j === 0) {
+        isDeleting = false;
+        i = (i + 1) % words.length;
+        setTimeout(type, 300);
+      } else {
+        setTimeout(type, speed);
+      }
+    }
+
+    type();
+  </script>
+
+</body>
+</html>
