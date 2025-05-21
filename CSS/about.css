@@ -1,0 +1,150 @@
+body{
+    min-height: 50vh;
+}
+
+.about-me {
+    background: #FFF;
+    /* position: absolute; */
+    /* margin-top: 100px; */
+    margin-left: 316px;
+    padding: 10px;
+}
+
+.about-me .img-and-text {
+    display: flex;
+    gap: 30px;
+    align-items: flex-start;
+    margin-left: 0;
+    margin-right: 30px;
+}
+
+.about-me h2 {
+    font-size: 40px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin-bottom: 20px;
+}
+
+.about-me .text {
+    font-size: 16px;
+
+    font-family: Roboto, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+    margin-bottom: 30px;
+}
+
+.about-me .line{
+    background-color: #00aaff;
+    width: 200px;
+    height: 5px;
+    margin-bottom: 20px;
+}
+
+.about-me img.myimg {
+    width: 380px;
+    height: auto;
+    object-fit: cover;
+    flex-shrink: 0;
+}
+
+.text-content {
+    position: relative;
+    flex: 1;
+    font-size: 20px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.text-content .box2 {
+    position: absolute;
+    margin-left: 400px;
+    bottom: 600px;
+    padding: 10px;
+}
+
+
+.text-content .ulx-dizenger {
+    font-weight: 700;
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.text-content .box1,
+.box2>.malumotlar {
+    font-size: 20px;
+}
+
+.text-content .officiis {
+    font-size: 19px;
+    margin-top: 15px;
+}
+
+.text-content .tecx {
+    font-size: 16px;
+}
+
+.box1,
+.box2 {
+    font-family: Roboto, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+    display: grid;
+    grid-template-columns: max-content 1fr;
+    gap: 15px;
+    padding: 10px;
+    /* font-size: 26px; */
+}
+
+.vve {
+    color: #00aeff;
+    margin-right: 5px;
+    font-size: 20px;
+}
+
+.text-content .numbers {
+    height: 100px;
+    position: sticky;
+    margin-top: 200px;
+    margin-left: -300px;
+    display: flex;
+    gap: 40px;
+    /* background-color: #00aeff; */
+}
+
+  
+  .stats {
+    display: flex;
+    justify-content: space-around;
+    text-align: center;
+    padding: 180px 20px;
+    margin-left: -390px;
+    gap: 90px;
+    /* background: #fff; */
+  }
+  
+  .stat-item {
+    max-width: 200px;
+  }
+  
+  .icon {
+    display: inline-block;
+    font-size: 60px;
+    color: #00aaff;
+    margin-bottom: 10px;
+    font-weight: 200;
+  }
+  
+  .stat-item h2 {
+    display: inline-block;
+    font-size: 36px;
+    color: #000;
+    margin: 10px 0;
+  }
+  
+  .stat-item h4 {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 5px;
+    color: #333;
+  }
+  
+  .stat-item p {
+    font-size: 14px;
+    color: #777;
+  }
+  
